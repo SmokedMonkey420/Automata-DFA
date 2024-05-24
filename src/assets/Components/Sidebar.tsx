@@ -5,7 +5,22 @@ import Regex from "./Regex";
 import ToggleButton from "./ToggleButton";
 import DFALogic from "./DFALogic";
 
-function Sidebar({ showCfg, switchCfgAndRegex }) {
+function Sidebar({
+  showCfg,
+  switchCfgAndRegex,
+  inputValue,
+  setInputValue,
+  setResult,
+}) {
+  const handleInputChange = (event) => {
+    setInputValue(event.target.value); // Call the function to update input value
+  };
+
+  const computeResult = () => {
+    const result = ""; // Perform your computation here
+    setResult(result); // Call the function to update the result value
+  };
+
   return (
     <>
       <div className="sidebar">
@@ -18,6 +33,8 @@ function Sidebar({ showCfg, switchCfgAndRegex }) {
                 type="text"
                 placeholder="Enter string..."
                 id="inputString"
+                value={inputValue}
+                onChange={handleInputChange}
               />
             </li>
             <li>

@@ -2,7 +2,7 @@ import React from "react";
 import "./PdfDfaContainer.css";
 import DFALogic from "./DFALogic";
 
-const PdaDfaContainer = ({ showCfg }) => {
+const PdaDfaContainer = ({ showCfg, activeDFAId }) => {
   const dfa1Div = (
     <div id="DFA1">
       <svg
