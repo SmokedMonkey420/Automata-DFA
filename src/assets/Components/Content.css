@@ -1,0 +1,13 @@
+.content-container {
+	height: 100%;
+	width: calc(100% - 300px);
+	margin-left: 300px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+  }
+
+  :root {
+	background-color: #191A19;
+  }

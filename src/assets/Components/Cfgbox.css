@@ -1,0 +1,8 @@
+.cfg-container {
+    display: inline-block;
+    text-align: left;
+  }
+
+.cfg-container h3 {
+    text-align: center;
+}
