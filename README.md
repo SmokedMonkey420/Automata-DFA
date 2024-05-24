@@ -1,3 +1,11 @@
+# How to run
+
+- Get node.js
+- clone repository
+- Cd into main folder Automata-DFA
+- Use npm i
+- Then npm run dev to run local server
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
