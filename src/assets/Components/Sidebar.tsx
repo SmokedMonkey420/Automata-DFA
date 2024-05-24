@@ -6,11 +6,6 @@ import ToggleButton from "./ToggleButton";
 import DFALogic from "./DFALogic";
 
 function Sidebar({ showCfg, switchCfgAndRegex }) {
-  const [inputValue, setInputValue] = useState("");
-
-  const handleInputChange = (event) => {
-    setInputValue(event.target.value);
-  };
   return (
     <>
       <div className="sidebar">
@@ -23,10 +18,7 @@ function Sidebar({ showCfg, switchCfgAndRegex }) {
                 type="text"
                 placeholder="Enter string..."
                 id="inputString"
-                value={inputValue}
-                onChange={handleInputChange}
               />
-              <DFALogic inputValue={inputValue} />
             </li>
             <li>
               <div id="result"></div>
