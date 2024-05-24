@@ -5,7 +5,7 @@ import "./App.css";
 
 function App() {
   const [showCfg, setShowCfg] = useState(true);
-  const [result, setResult] = useState("");
+  const [inputValue, setInputValue] = useState(""); // Add inputValue state
 
   const switchCfgAndRegex = () => {
     setShowCfg((prevShowCfg) => !prevShowCfg);
@@ -16,9 +16,10 @@ function App() {
       <Sidebar
         showCfg={showCfg}
         switchCfgAndRegex={switchCfgAndRegex}
-        setResult={setResult}
+        inputValue={inputValue} // Pass inputValue
+        setInputValue={setInputValue} // Pass setInputValue
       />
-      <Content showCfg={showCfg} result={result} />
+      <Content showCfg={showCfg} inputValue={inputValue} />
     </>
   );
 }
