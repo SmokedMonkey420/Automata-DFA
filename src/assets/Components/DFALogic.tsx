@@ -180,6 +180,11 @@ const DFALogic: React.FC<{
     }
   };
 
+  const handleSubmit = () => {
+    resetNodeColors();
+    getTraversedNodes();
+  };
+
   const timer = (ms: number) => new Promise<void>((res) => setTimeout(res, ms));
 
   async function resetNodeColors() {
