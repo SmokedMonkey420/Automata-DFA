@@ -27,9 +27,6 @@ function Sidebar({ showCfg, switchCfgAndRegex, inputValue, setInputValue }) {
               />
             </li>
             <li>
-              <div id="result"></div>
-            </li>
-            <li>
               <button>Validate</button>
             </li>
             <li>
