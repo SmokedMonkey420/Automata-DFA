@@ -180,11 +180,6 @@ const DFALogic: React.FC<{
     }
   };
 
-  const handleSubmit = () => {
-    resetNodeColors();
-    getTraversedNodes();
-  };
-
   const timer = (ms: number) => new Promise<void>((res) => setTimeout(res, ms));
 
   async function resetNodeColors() {
@@ -198,13 +193,14 @@ const DFALogic: React.FC<{
 
   async function changeColor() {
     getTraversedNodes();
+    await timer(300); // Add a small delay to ensure getTraversedNodes has time to execute
     for (let nodeID of traversedNodes) {
       const node = document.getElementById(nodeID);
       if (node instanceof SVGElement) {
         node.style.fill = "red";
-        await timer(200);
+        await timer(300);
         node.style.fill = "green";
-        await timer(500);
+        await timer(600);
       } else {
         console.error(`Node ${nodeID} not found`);
       }
