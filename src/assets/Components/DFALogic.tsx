@@ -25,6 +25,7 @@ const DFALogic: React.FC<{
   const nodesRef = useRef<{ [key: string]: Node }>({});
 
   useEffect(() => {
+    setCurrentDFA(activeDFAId);
     // Create nodes for DFA 1
     const trapNode = new Node(null, null, "trapNode");
     trapNode.a = trapNode;
@@ -117,6 +118,7 @@ const DFALogic: React.FC<{
   }, [activeDFAId]);
 
   const getTraversedNodes = () => {
+    const inputString = inputValue.toString();
     let nodes = [];
     let node =
       currentDFA === "DFA1"
@@ -142,10 +144,13 @@ const DFALogic: React.FC<{
           return;
         }
       } else if (currentDFA === "DFA2") {
+        console.log("Start traverse");
         if (character === "1") {
+          console.log("push to a");
           nodes.push(node?.a?.nodeID || "null");
           node = node?.a || null;
         } else if (character === "0") {
+          console.log("push to b");
           nodes.push(node?.b?.nodeID || "null");
           node = node?.b || null;
         } else {
